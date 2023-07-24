@@ -10,8 +10,6 @@ function App() {
   const [status, setStatus] = useState({});
   const [problem, setProblem] = useState(null);
 
-  console.log(import.meta.env.VITE_APP_BASE_URL);
-
   const handleSubmit = (code) => {
     if (!code) return;
     setStatus({
