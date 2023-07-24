@@ -62,13 +62,13 @@ function App() {
   return (
     <>
       <Box p={4}>
-        <div className="container">
+        <Flex direction={"column"} width={"100%"} align="center">
           {status?.questionFetchingError && (
             <Text fontSize={["xl", "2xl", "3xl"]} marginBottom={8}>
               {status?.questionFetchingError}
             </Text>
           )}
-          <Text fontSize={["xl", "2xl", "3xl"]} marginBottom={8}>
+          <Text fontSize={["xl", "2xl", "3xl"]} marginBottom={5}>
             {problem?.title}
           </Text>
           <Text fontSize={["md", "lg", "xl"]} marginBottom={10}>
@@ -90,12 +90,12 @@ function App() {
                     gap={5}
                     key={index}
                   >
-                    <Text fontSize={["sm", "md", "lg"]}>Example: {` `}</Text>
+                    <Text fontSize={["sm", "md", "md"]}>Example: {` `}</Text>
                     <Box>
-                      <Text textAlign={"start"} fontSize={["sm", "md", "lg"]}>
+                      <Text textAlign={"start"} fontSize={["sm", "md", "md"]}>
                         {val?.input}
                       </Text>
-                      <Text textAlign={"start"} fontSize={["sm", "md", "lg"]}>
+                      <Text textAlign={"start"} fontSize={["sm", "md", "md"]}>
                         {val?.output}
                       </Text>
                     </Box>
@@ -107,7 +107,7 @@ function App() {
           {problem?.title && (
             <Editor handleSubmit={handleSubmit} status={status} />
           )}
-        </div>
+        </Flex>
       </Box>
     </>
   );

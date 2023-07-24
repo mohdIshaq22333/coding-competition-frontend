@@ -15,8 +15,8 @@ function Editior({ handleSubmit, status = {} }) {
     <>
       {" "}
       <Editor
-        height="50vh"
-        width="90vw"
+        height="43vh"
+        width="80vw"
         defaultLanguage="javascript"
         onChange={setCode}
         value={code}

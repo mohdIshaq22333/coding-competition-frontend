@@ -4,7 +4,14 @@
   padding: 2rem;
   text-align: center;
 }
+#root::-webkit-scrollbar {
+  display: none;
+}
 
+#root {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
