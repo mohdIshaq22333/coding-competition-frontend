@@ -10,13 +10,18 @@ function App() {
   const [status, setStatus] = useState({});
   const [problem, setProblem] = useState(null);
 
+  console.log(import.meta.env.VITE_APP_BASE_URL);
+
   const handleSubmit = (code) => {
     if (!code) return;
     setStatus({
       loading: true,
     });
     axios
-      .post(`http://localhost:3000/api/problems/${problem?.id}`, { code })
+      .post(
+        `${import.meta.env.VITE_APP_BASE_URL}/api/problems/${problem?.id}`,
+        { code }
+      )
       .then((val) => {
         setStatus({
           loading: false,
@@ -37,7 +42,11 @@ function App() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/problems/${Math.ceil(Math.random() * 3)}`)
+      .get(
+        `${import.meta.env.VITE_APP_BASE_URL}/api/problems/${Math.ceil(
+          Math.random() * 3
+        )}`
+      )
       .then((val) => {
         setProblem(val?.data);
       })
